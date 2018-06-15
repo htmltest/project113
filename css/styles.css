@@ -330,3 +330,29 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .footer-social a.footer-social-yt {background-position:-88px top}
 .footer-social a.footer-social-fb {background-position:-132px top}
 .footer-copyrights {float:right; clear:right; padding:15px 0 0 0; color:#707070}
+
+.window-open body {overflow:hidden}
+
+.window {position:fixed; left:0; top:0; right:0; bottom:0; z-index:99997; overflow:auto; background:rgba(0, 42, 27, 0.67)}
+.window-loading {position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; background:url(../images/loading.gif)}
+.window-container {position:absolute; z-index:99999; left:50%; top:50%}
+.window-container-load {position:fixed; left:-9999px; top:-9999px}
+.window-content {position:relative; background:#fff}
+.window-close {display:block; position:absolute; width:15px; height:14px; right:20px; top:20px; background:url(../images/window-close.png)}
+.window-close:hover {opacity:0.8}
+
+.window-balls {width:820px; padding:47px 50px 54px 50px}
+.window-balls-title {color:#000; font-size:33px; line-height:42px}
+.window-balls-list table {width:100%; border-collapse:collapse; margin:25px 0 0 0}
+.window-balls-list th {vertical-align:top; text-align:left; color:#76818c; font-size:16px; line-height:24px; font-weight:normal; border-bottom:2px solid #d4dce3; padding:0 0 12px 0}
+.window-balls-list td {vertical-align:top; text-align:left; color:#000; font-size:16px; line-height:24px; border-bottom:2px solid #e9edf1; padding:13px 0 11px 0}
+.window-balls-summ {font-weight:bold; color:#000; margin:24px 0 0 0}
+.window-balls-summ strong {color:#00925f}
+.window-balls-notice {color:#76828c; margin:48px 0 0 0}
+.window-balls-notice p {margin:24px 0 0 0; padding:0}
+.window-balls-notice a {color:#76828c}
+.window-balls-notice img {vertical-align:middle; margin:-6px 0 0 6px}
+.window-balls-notice em {color:#000; font-weight:bold}
+
+.copy-button {display:inline-block; vertical-align:middle; margin:-6px 0 0 6px; width:16px; height:20px; padding:0; outline:none; border:none; background:url(../images/copy.svg); cursor:pointer; -webkit-appearance:none}
+.gifts-promo .copy-button {background:url(../images/copy2.svg)}
