@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>OPPO</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <div class="top">
+                    <div class="container">
+                        <div class="top-menu">
+                            <ul>
+                                <li>
+                                    Александр Иванов: 120 баллов
+                                    <a href="windows/balls.html" class="rating-item-info"></a>
+                                </li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <header>
+                    <div class="container">
+                        <div class="logo"><a href="http://www.oppo.com/ru/index.html?utm_source=footballcampaign&utm_medium=button" target="_blank"></a></div>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Главная</a></li>
+                                <li><a href="#">Правила конкурса</a></li>
+                                <li class="active"><a href="#">Селфи-конкурс</a></li>
+                                <li><a href="#">Игра «Вспомни лучшее»</a></li>
+                                <li><a href="#">Рейтинг участников</a></li>
+                                <li><a href="#">Где купить</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+
+                <!-- selfie descr -->
+                <div class="selfie-descr">
+                    <div class="container">
+                        <div class="selfie-header">
+                            <div class="selfie-photo"></div>
+                            <div class="selfie-title">Селфи-конкурс</div>
+                            <div class="selfie-name">Поделись лучшим футбольным моментом</div>
+                        </div>
+
+                        <div class="selfie-steps">
+                            <div class="selfie-step">
+                                <img src="images/selfie-step-1.png" alt="" />
+                                <div class="selfie-step-number">1.</div>
+                                <div class="selfie-step-text">Загрузи своё фото,<br /> связанное с футболом</div>
+                            </div>
+                            <div class="selfie-step">
+                                <img src="images/selfie-step-2.png" alt="" />
+                                <div class="selfie-step-number">2.</div>
+                                <div class="selfie-step-text">Придумай кричалку<br /> в&nbsp;поддержку любимой<br /> команды</div>
+                            </div>
+                            <div class="selfie-step">
+                                <img src="images/selfie-step-3.png" alt="" />
+                                <div class="selfie-step-number">3.</div>
+                                <div class="selfie-step-text">Размести пост<br /> в VK/Facebook/Instagram</div>
+                            </div>
+                            <div class="selfie-step">
+                                <img src="images/selfie-step-4.png" alt="" />
+                                <div class="selfie-step-number">4.</div>
+                                <div class="selfie-step-text">Поборись<br /> за классные призы</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- selfie descr END -->
+
+                <!-- contest -->
+                <div class="contest">
+                    <div class="contest-list">
+
+                        <!-- contest step -->
+                        <div class="contest-step contest-step-1 active">
+                            <div class="contest-welcome">
+                                <div class="container">
+                                    <div class="contest-welcome-title">
+                                        <div class="contest-welcome-title-inner">1. Загрузи своё фото</div>
+                                    </div>
+                                    <div class="contest-photo">
+                                        <div class="contest-camera">
+                                            <video id="camera-stream"></video>
+                                            <canvas id="video-temp" width="419" height="419"></canvas>
+                                        </div>
+                                        <a href="#" class="contest-camera-btn">
+                                            <svg viewBox="0 0 44 40" id="spr-take-photo" width="44" height="40"> <path fill-rule="evenodd" d="M12 10H7.785C5.699 10 4 11.73 4 13.857v19.286C4 35.273 5.695 37 7.785 37h28.43C38.301 37 40 35.27 40 33.143V13.857C40 11.727 38.305 10 36.215 10H31c-.95 0-1.9-1.017-1.9-2 0-2.205-1.704-4-3.8-4h-7.6c-2.104 0-3.8 1.787-3.8 4 0 1.008-.95 2-1.9 2zm-.859-4c.686-3.421 3.79-6 7.526-6h7.666c3.728 0 6.837 2.584 7.525 6h2.494C40.576 6 44 9.384 44 13.556v18.888C44 36.614 40.572 40 36.352 40H7.648C3.424 40 0 36.616 0 32.444V13.556C0 9.386 3.428 6 7.648 6h3.493zM31 22.5a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0zm-15 0a5.5 5.5 0 1 0 11 0 5.5 5.5 0 0 0-11 0z"></path></svg>
+                                        </a>
+                                        <div class="contest-photo-links">
+                                            <div class="contest-photo-upload">
+                                                <div class="contest-photo-upload-field">
+                                                    <input type="file" name="file" />
+                                                    <div class="contest-photo-upload-title">Загрузить<br /> фотографию</div>
+                                                </div>
+                                            </div>
+                                            <div class="contest-photo-camera">
+                                                <div class="contest-photo-camera-field">
+                                                    <div class="contest-photo-upload-title">Сделать<br /> снимок</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contest step END -->
+
+                        <!-- contest step -->
+                        <div class="contest-step contest-step-2">
+                            <div class="contest-photo-wrap">
+                                <div class="container">
+                                    <div class="contest-welcome-title">
+                                        <div class="contest-welcome-title-inner">1. Загрузи своё фото</div>
+                                    </div>
+                                    <div class="contest-photo-editor">
+                                        <div class="contest-photo-editor-content">
+                                            <canvas id="photo-editor" width="419" height="419"></canvas>
+                                        </div>
+                                        <div class="contest-photo-editor-theme"></div>
+                                        <div class="contest-photo-editor-ctrl">
+                                            <div class="contest-photo-editor-btns contest-photo-editor-btns-main">
+                                                <a href="#" class="contest-photo-editor-zoom-inc">
+                                                    <img src="images/contest-photo-editor-zoom-inc.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Увеличить</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-zoom-dec">
+                                                    <img src="images/contest-photo-editor-zoom-dec.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Уменьшить</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-move">
+                                                    <img src="images/contest-photo-editor-move.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Переместить</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-rotate">
+                                                    <img src="images/contest-photo-editor-rotate.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Повернуть</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-change">
+                                                    <img src="images/contest-photo-editor-change.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Изменить</span>
+                                                </a>
+                                            </div>
+                                            <div class="contest-photo-editor-btns contest-photo-editor-btns-moving">
+                                                <a href="#" class="contest-photo-editor-move-left">
+                                                    <img src="images/contest-photo-editor-left.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Влево</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-move-up">
+                                                    <img src="images/contest-photo-editor-up.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Наверх</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-move-down">
+                                                    <img src="images/contest-photo-editor-down.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Вниз</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-move-right">
+                                                    <img src="images/contest-photo-editor-right.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Вправо</span>
+                                                </a>
+                                                <a href="#" class="contest-photo-editor-moving-close">
+                                                    <img src="images/contest-photo-editor-change.png" alt="" />
+                                                    <span class="contest-photo-editor-btn-hint">Назад</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="contest-photo-item-next">Сохранить и продолжить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contest step END -->
+
+                        <!-- contest step -->
+                        <div class="contest-step contest-step-3">
+                            <div class="contest-describe">
+                                <div class="container">
+                                    <div class="contest-welcome-title">
+                                        <div class="contest-welcome-title-inner">
+                                            <div class="contest-welcome-title-prev"><a href="#" class="contest-welcome-title-prev-to-photo">1. Загрузи своё фото</a> <span>→</span></div>
+                                            2. Придумай кричалку
+                                        </div>
+                                    </div>
+                                    <div class="describe">
+                                        <div class="describe-img"><img src="images/blank.gif" alt="" /></div>
+                                        <div class="describe-form">
+                                            <div class="describe-textarea"><textarea name="message" cols="10" rows="5" placeholder="Опиши свой лучший момент здесь. Будь смел и креативен!"></textarea></div>
+                                            <div class="describe-next"><a href="#">Сохранить и продолжить</a></div>
+                                            <div class="describe-notice"><strong>*</strong> Не забудь добавить хештег <span>#OPPOспорт</span> к посту,<br /> если хочешь размести фото в Instagram!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contest step END -->
+
+                        <!-- contest step -->
+                        <div class="contest-step contest-step-4">
+                            <div class="contest-share">
+                                <div class="container">
+                                    <div class="contest-welcome-title">
+                                        <div class="contest-welcome-title-inner">
+                                            <div class="contest-welcome-title-prev"><a href="#" class="contest-welcome-title-prev-to-photo">1. Загрузи своё фото</a> <span>→</span><a href="#" class="contest-welcome-title-prev-to-describe">2. Придумай кричалку</a> <span>→</span></div>
+                                            3. Размести селфи в соцсетях
+                                        </div>
+                                    </div>
+                                    <div class="share">
+                                        <div class="share-img-wrap">
+                                            <div class="share-img"><img src="images/blank.gif" alt="" /></div>
+                                            <div class="share-links">
+                                                <div class="share-link">
+                                                    <a href="#" class="share-link-item share-link-vk">Поделиться во «ВКонтакте»</a>
+                                                </div>
+                                                <div class="share-link">
+                                                    <a href="#" class="share-link-item share-link-fb">Поделиться в «Facebook»</a>
+                                                </div>
+                                                <div class="share-link">
+                                                    <a href="#" class="share-link-item share-link-item-with-link share-link-ig">Скачать для «Instagram»</a>
+                                                    <div class="share-link-form">
+                                                        <div class="share-link-form-input"><input type="text" name="link" value="" placeholder="Введите ссылку на ваш пост в Instagram" /></div>
+                                                        <div class="share-link-form-submit"><a href="#">Сохранить и продолжить</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="share-form">
+                                            <div class="share-img-to-social" data-border="images/contest-theme.png">
+                                                <canvas id="social-editor" width="1080" height="482"></canvas>
+                                                <img id="social-editor-img" src="images/blank.gif" alt="" />
+                                            </div>
+                                            <div class="share-textarea"><textarea name="message-share" cols="10" rows="5" readonly="true" disabled="disabled"></textarea></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contest step END -->
+
+                    </div>
+                </div>
+                <!-- contest END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+                <div class="footer-logo"><a href="http://www.oppo.com/ru/index.html?utm_source=footballcampaign&utm_medium=button" target="_blank"></a></div>
+
+                <div class="footer-links">
+                    <p>
+                        <a href="https://www.oppo.com/ru/smartphone-f7?utm_source=footballcampaign&utm_medium=footer" target="_blank">Страница продукта OPPO F7</a><br />
+                        <a href="http://www.oppo.com/ru/?utm_source=footballcampaign" target="_blank">Официальный сайт OPPO Россия</a><br />
+                        <a href="ttp://oppo.ru/?utm_source=footballcampaign" target="_blank">Официальный интернет-магазин OPPO</a>
+                    </p>
+                    <p><a href="#" target="_blank">Правила проведения и участия в конкурсе</a></p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://vk.com/oppo_russia" class="footer-social-vk" target="_blank"></a>
+                    <a href="https://www.instagram.com/opporussia/" class="footer-social-ig" target="_blank"></a>
+                    <a href="https://www.youtube.com/channel/UCGaE62eZyhTf8WKy3yPnXHA" class="footer-social-yt" target="_blank"></a>
+                    <a href="https://www.facebook.com/OPPORussia/" class="footer-social-fb" target="_blank"></a>
+                </div>
+
+                <div class="footer-copyrights">Copyright © 2018 OPPO. Все права защищены.</div>
+            </div>
+        </footer>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="js/jquery-ui-1.12.1.custom/datepicker-ru.js"></script>
+        <script src="js/current-device.min.js"></script>
+        <script src="js/exif.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

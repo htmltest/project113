@@ -24,7 +24,7 @@ img {border:none; max-width:100%}
 .top {background:#00925f}
 .top-menu {float:right; font-size:14px; line-height:28px}
 .top-menu ul {margin:0; padding:0; list-style:none}
-.top-menu ul li {float:left; margin:0 0 0 18px; padding:0 0 0 18px; border-left:1px solid #47b488}
+.top-menu ul li {float:left; margin:0 0 0 18px; padding:0 0 0 18px; border-left:1px solid #47b488; color:#fff}
 .top-menu ul li:first-child {margin:0; padding:0; border-left:none}
 .top-menu ul li a {color:#fff; text-decoration:none}
 .top-menu ul li a:hover {text-decoration:underline}
@@ -53,7 +53,8 @@ nav ul li a:hover {color:#000}
 .welcome-notice {position:relative; font-size:14px; line-height:18px; color:#7a838c; margin:68px 0 0 0; padding:0 0 121px 0}
 .welcome-notice::before {content:"*"; position:absolute; right:100%; top:0; margin-right:4px}
 .welcome-notice a {color:#7a838c}
-.welcome-next {float:right; margin:-265px -5px 0 0; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px}
+.welcome-next {float:right; margin:-265px -5px 0 0; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px; cursor:pointer; transition:all 0.2s}
+.welcome-next:hover {opacity:0.8}
 .welcome-next-text-1 {font-size:28px; line-height:28px; padding:45px 0 0 0}
 .welcome-next::after {content:""; display:block; width:14px; height:9px; background:url(../images/welcome-next.png); margin:14px auto 0 auto}
 
@@ -88,12 +89,17 @@ nav ul li a:hover {color:#000}
 .gifts-content {float:right; width:670px}
 .gifts-title {color:#c4cee2; font-size:33px; line-height:42px; padding:99px 0 0 0}
 .gifts-text-shop {color:#fff; padding:32px 0 0 0}
+.gifts-text-shop a {color:#fff; text-decoration:none}
+.gifts-text-shop a:hover {text-decoration:underline}
 .gifts-list {padding:22px 0 0 0; margin:0 0 0 -12px}
 .gifts-list::after {content:""; display:block; clear:both}
 .gifts-item {float:left; width:147px; height:146px; background:#fff; border-radius:50%; margin:0 19px 0 0; position:relative; line-height:0}
 .gifts-item img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:none}
 .gifts-descr {float:left; margin:37px 0 0 13px; color:#a4c3ed; font-style:italic}
+.gifts-promo {color:#fff; padding:39px 0 0 0}
+.gifts-promo-code {color:#f00; font-weight:bold}
 .gifts-text-partners {color:#fff; padding:39px 0 0 0}
+.gifts-text-partners em {color:#a4c3ed}
 .gifts-partners {font-size:0; line-height:0; letter-spacing:-1px; padding:12px 0 0 0}
 .gifts-partners a {display:inline-block; vertical-align:middle; margin:0 26px 0 0}
 .gifts-notice {font-size:14px; color:#a4c3ed; padding:0 0 101px 0; position:relative; margin:42px 0 0 0}
@@ -172,8 +178,8 @@ nav ul li a:hover {color:#000}
 .rating-list td:nth-child(2) {width:34%}
 .rating-list td:nth-child(3) {width:26%}
 .rating-list tr:first-child td {border-color:#39b288}
-.rating-item-info {display:inline-block; vertical-align:middle; position:relative; margin:-4px 0 0 6px}
-.rating-item-info-icon {display:block; width:18px; height:18px; background:url(../images/rating-icon.png)}
+.rating-item-info {display:inline-block; vertical-align:middle; position:relative; margin:-4px 0 0 6px; width:18px; height:18px; background:url(../images/rating-icon.png); opacity:0.5; transition:all 0.2s}
+.rating-item-info:hover {opacity:1}
 
 .rating-pager {margin:50px 0 0 0}
 .rating-pager::after {content:""; display:block; clear:both}
@@ -187,6 +193,129 @@ nav ul li a:hover {color:#000}
 .rating-pager-links a:hover {color:#fff}
 .rating-pager-links a.active {color:#fff; border-color:#fff}
 
+.selfie-descr {background:#113e65 url(../images/selfie-descr.png) no-repeat center; background-size:cover; position:relative; margin:-1px 0 0 0}
+.selfie-header::after {content:""; display:block; clear:both}
+.selfie-photo {float:right; width:296px; height:265px; background:url(../images/selfie-photo.png); margin:48px 24px 0 0}
+.selfie-title {margin:0 440px 0 0; color:#fff; font-size:33px; line-height:42px; padding:89px 0 0 0}
+.selfie-name {margin:0 440px 0 0; color:#fff; font-size:66px; line-height:70px; font-weight:bold; padding:6px 0 0 0}
+
+.selfie-steps {color:#fff; font-size:20px; padding:56px 0 73px 0}
+.selfie-steps::after {content:""; display:block; clear:both}
+.selfie-step {float:left; margin:0 0 0 90px; position:relative}
+.selfie-step:first-child {margin:0}
+.selfie-step img {position:absolute; left:-44px; top:-41px}
+.selfie-step-number {float:left; position:relative}
+.selfie-step-text {float:left; margin:0 0 0 10px; position:relative}
+
+.contest {position:relative; margin:0 0 -92px 0; z-index:1; font-size:0; line-height:0; letter-spacing:-1px; width:100%; overflow:hidden; white-space:nowrap; transition:all 0.2s}
+.contest-list {position:relative; left:0; transition:all 0.2s}
+.contest-list-editor {left:-100%}
+.contest-list-describe {left:-200%}
+.contest-list-share {left:-300%}
+.contest-step {display:inline-block; vertical-align:top; width:100%; font-size:16px; line-height:24px; letter-spacing:0; white-space:normal}
+
+.contest-welcome {background:#000 url(../images/contest-welcome.jpg) no-repeat center; background-size:cover; padding:0 0 107px 0}
+.contest-welcome-title {text-align:center; color:#fff; padding:93px 0 48px 0}
+.contest-welcome-title-inner {display:inline-block; vertical-align:top; position:relative; font-size:33px; line-height:42px}
+.contest-welcome-title-prev {position:absolute; right:100%; top:-5px; white-space:nowrap; font-size:16px}
+.contest-welcome-title-prev a {color:#929aa1}
+.contest-welcome-title-prev span {color:#444549; font-size:18px; font-family:Arial, Helvertica, sans-serif; margin:0 18px}
+
+.contest-photo {width:480px; height:480px; margin:0 auto; border:6px solid #efefef; background:#1c1d1f url(../images/contest-photo.png) no-repeat center; background-size:cover; overflow:hidden; position:relative}
+
+.contest-photo-links {padding:156px 0 0 0; position:relative; font-size:0; line-height:0; letter-spacing:-1px; text-align:center}
+.contest-photo-upload {display:inline-block; vertical-align:top; margin:0 10px}
+.contest-photo-upload-field {position:relative; overflow:hidden; width:150px; height:150px; border:2px solid rgba(232, 236, 240, 0.22); background:rgba(0, 0, 0, 0.52) url(../images/contest-photo-upload.svg) no-repeat center 23px; cursor:pointer}
+.contest-photo-upload-field input {height:200px; position:absolute; top:0; right:0; opacity:0; cursor:pointer; font-size:200px; background:url(../images/blank.gif); -webkit-appearance:none}
+.contest-photo-upload-title {text-align:center; font-size:16px; line-height:18px; letter-spacing:0; color:#fff; padding:90px 0 0 0}
+.contest-photo-camera {display:inline-block; vertical-align:top; margin:0 10px}
+.contest-photo-camera-field {position:relative; overflow:hidden; width:150px; height:150px; border:2px solid rgba(232, 236, 240, 0.22); background:rgba(0, 0, 0, 0.52) url(../images/contest-photo-camera.svg) no-repeat center 30px; cursor:pointer}
+.contest-photo-camera-title {text-align:center; font-size:16px; line-height:18px; letter-spacing:0; color:#fff; padding:90px 0 0 0}
+.tablet .contest-photo-camera,
+.mobile .contest-photo-camera {display:none}
+
+.contest-photo.camera .contest-photo-links {display:none}
+.contest-camera {display:none; position:absolute; left:0; top:0; width:468px; height:468px}
+.contest-camera canvas {display:none}
+.contest-photo.camera .contest-camera {display:block}
+.contest-camera video {position:absolute; left:0; top:0; width:100%; height:100%}
+.contest-camera-btn {display:none; position:absolute; left:50%; bottom:40px; background:#555; opacity:.6; padding:10px; border-radius:50%; margin:0 0 0 -32px; line-height:0}
+.contest-camera-btn svg {display:block}
+.contest-camera-btn:hover {opacity:1}
+.contest-camera-btn path {fill:#fff}
+.contest-photo.camera .contest-camera-btn {display:block}
+
+.contest-photo-wrap {background:#000; padding:0 0 134px 0}
+.contest-photo-editor {width:1080px; margin:18px auto 0 auto; height:482px; position:relative}
+.contest-photo-editor-content {position:absolute; left:331px; top:31px; width:419px; height:419px}
+.contest-photo-editor-theme {position:absolute; left:0; top:0; right:0; bottom:0; background:url(../images/contest-theme.png)}
+
+.contest-photo-editor-ctrl {position:absolute; left:331px; top:31px; width:419px; height:419px}
+.contest-photo-editor-btns {position:absolute; right:40px; top:40px}
+.contest-photo-editor.moving .contest-photo-editor-btns-main {display:none}
+.contest-photo-editor-btns-moving {display:none}
+.contest-photo-editor.moving .contest-photo-editor-btns-moving {display:block}
+.contest-photo-editor-btns a {float:left; width:36px; height:36px; text-decoration:none; line-height:36px; text-align:center; margin:0 0 0 10px; border-radius:50%; background:rgba(0, 0, 0, 0.75); position:relative}
+.contest-photo-editor-btns a img {vertical-align:middle}
+.contest-photo-editor-btn-hint {display:none; position:absolute; left:-7px; top:49px; white-space:nowrap; color:#fff; font-size:14px; line-height:29px; padding:0 20px; background:rgba(0, 0, 0, 0.75)}
+.contest-photo-editor-btn-hint::before {content:""; display:block; position:absolute; left:24px; top:-8px; width:0; height:0; border-bottom:8px solid rgba(0, 0, 0, 0.75); border-right:8px solid transparent}
+.contest-photo-editor-btns a:hover .contest-photo-editor-btn-hint {display:block}
+.contest-photo-item-next {display:block; position:absolute; left:40px; bottom:40px; right:40px; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
+.contest-photo-item-next:hover {opacity:0.8}
+.contest-photo-item-next::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
+
+.contest-describe {background:#000; padding:0 0 91px 0}
+
+.describe {width:1080px; margin:18px auto 0 auto; padding:31px 0 0 0; position:relative}
+.describe-img {position:relative; margin-left:331px; width:419px; height:419px; line-height:0}
+.describe::after {content:""; display:block; position:absolute; left:0; top:0; width:1080px; height:482px; background:url(../images/contest-theme.png)}
+.describe-form {margin:0 0 0 331px; background:#efefef; padding:43px 50px 41px 50px; width:419px; position:relative; z-index:1}
+.describe-form::before {content:""; display:block; position:absolute; right:-70px; top:-94px; width:180px; height:132px; background:url(../images/ball.png)}
+.describe-textarea textarea {position:relative; border:none; font:italic 16px/24px MyriadPro, sans-serif; color:#404b55; vertical-align:top; margin:0; padding:0; width:100%; height:96px; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none; resize:none; overflow:auto}
+.describe-textarea textarea::-webkit-input-placeholder {opacity:1; color:#87939e}
+.describe-textarea textarea::-moz-placeholder {opacity:1; color:#87939e}
+.describe-textarea textarea:-ms-input-placeholder {opacity:1; color:#87939e}
+.describe-next {border-top:2px solid #d4dce3; padding:30px 0 0 0}
+.describe-next a {display:block; width:100%; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
+.describe-next a:hover {opacity:0.8}
+.describe-next a::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
+.describe-notice {position:relative; font-size:14px; line-height:20px; color:#87939e; margin:17px 0 0 0}
+.describe-notice span {color:#00925f}
+.describe-notice strong {position:absolute; left:-10px; top:0; font-weight:normal}
+
+.contest-share {background:#000; padding:0 0 106px 0}
+
+.share {width:1080px; margin:18px auto 0 auto; padding:31px 0 0 0; position:relative}
+.share-img-wrap {position:relative; margin-left:331px; width:419px; height:419px}
+.share-img {position:relative; line-height:0; -webkit-filter:blur(25px); -moz-filter:blur(25px); -o-filter:blur(25px); -ms-filter:blur(25px); filter:blur(25px)}
+.share::after {content:""; display:block; position:absolute; left:0; top:0; width:1080px; height:482px; background:url(../images/contest-theme.png)}
+.share-form {margin:0 0 0 331px; background:#efefef; padding:43px 50px 31px 50px; width:419px; position:relative; z-index:1}
+.share-form::before {content:""; display:block; position:absolute; right:-70px; top:-94px; width:180px; height:132px; background:url(../images/ball.png)}
+.share-textarea textarea {position:relative; border:none; font:16px/24px MyriadPro, sans-serif; color:#404b55; vertical-align:top; margin:0; padding:0; width:100%; height:144px; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none; resize:none; overflow:auto}
+.share-img-to-social {display:none}
+
+.share-links {position:absolute; left:50%; top:50%; width:300px; margin:0 0 0 -150px; transform:translateY(-50%); z-index:1}
+.share-link {position:relative; margin:30px 0 0 0}
+.share-link:first-child {margin:0}
+.share-link-item {display:block; color:#fff; text-decoration:none; border-radius:3px; padding:0 0 0 26px; height:54px; font-size:16px; line-height:54px; position:relative}
+.share-link-item:hover {opacity:0.8}
+.share-link-vk {background:#5281b9}
+.share-link-vk::after {content:""; display:block; width:21px; height:12px; background:url(../images/share-vk.png); position:absolute; right:21px; top:20px}
+.share-link-fb {background:#3a559f}
+.share-link-fb::after {content:""; display:block; width:19px; height:20px; background:url(../images/share-fb.png); position:absolute; right:22px; top:17px}
+.share-link-ig {background:#512665}
+.share-link-ig::after {content:""; display:block; width:24px; height:24px; background:url(../images/share-ig.png); position:absolute; right:19px; top:15px}
+.share-link-form {display:none; position:absolute; left:-40px; top:0; right:-40px; z-index:2; background:#efefef; border-radius:3px; padding:15px 40px 21px 40px}
+.share-link.open .share-link-form {display:block}
+.share-link-form-input input {position:relative; border:none; font:italic 16px/24px MyriadPro, sans-serif; color:#404b55; vertical-align:top; margin:0; padding:0; width:100%; height:24px; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
+.share-link-form-input input::-webkit-input-placeholder {opacity:1; color:#87939e}
+.share-link-form-input input::-moz-placeholder {opacity:1; color:#87939e}
+.share-link-form-input input:-ms-input-placeholder {opacity:1; color:#87939e}
+.share-link-form-submit {border-top:2px solid #d4dce3; padding:19px 0 0 0; margin:5px 0 0 0}
+.share-link-form-submit a {display:block; width:100%; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
+.share-link-form-submit a:hover {opacity:0.8}
+.share-link-form-submit a::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
+
 footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:relative}
 
 .footer-logo {float:left; width:154px; height:25px; margin:60px 0 0 0; background:url(../images/logo.png); position:relative}
@@ -194,7 +323,8 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .footer-links {float:left; margin:0 0 0 237px; font-size:16px; line-height:28px}
 .footer-links p {margin:0; padding:56px 0 0 0}
 .footer-social {float:right; margin:60px 0 0 0}
-.footer-social a {float:left; width:43px; height:42px; background:url(../images/footer-social.png); margin:0 0 0 8px}
+.footer-social a {float:left; width:43px; height:42px; background:url(../images/footer-social.png); margin:0 0 0 8px; transition:all 0.2s}
+.footer-social a:hover {opacity:0.8}
 .footer-social a.footer-social-vk {background-position:left top}
 .footer-social a.footer-social-ig {background-position:-44px top}
 .footer-social a.footer-social-yt {background-position:-88px top}
