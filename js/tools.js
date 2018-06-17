@@ -743,6 +743,11 @@ $(document).ready(function() {
         }
     }
 
+    $('.nav-mobile-link').click(function(e) {
+        $('html').toggleClass('nav-mobile-open');
+        e.preventDefault();
+    });
+
 });
 
 function checkErrors() {

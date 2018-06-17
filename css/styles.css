@@ -6,33 +6,66 @@
 *::before,
 *::after {outline:none; box-sizing:border-box}
 
-html {min-width:1260px; height:100%}
+html {min-width:480px; height:100%}
 
-body {min-width:1260px; height:100%; margin:0; padding:0; font:16px/24px MyriadPro, sans-serif; color:#2f3e4b; background:#fff; -webkit-text-size-adjust:100%}
+body {min-width:480px; height:100%; margin:0; padding:0; font:16px/24px MyriadPro, sans-serif; color:#2f3e4b; background:#fff; -webkit-text-size-adjust:100%}
 
 a {color:#707070}
-a:hover {text-decoration:none}
+.desktop a:hover {text-decoration:none}
 
 img {border:none; max-width:100%}
 
-.wrapper {position:relative; min-width:1260px; width:100%; overflow:hidden; min-height:100%}
+.wrapper {position:relative; min-width:480px; width:100%; overflow:hidden; min-height:100%}
 .wrapper-inner {padding:0 0 352px 0}
+
+@media screen and (max-width:1209px) {
+    .wrapper-inner {padding:0 0 461px 0}
+}
 
 .container {max-width:1210px; margin:0 auto; padding:0 15px}
 .container::after {content:""; display:block; clear:both}
 
+@media screen and (max-width:1209px) {
+    .container {padding:0 40px}
+}
+
 .top {background:#00925f}
+
+.nav-mobile-link {display:none}
+
+@media screen and (max-width:1209px) {
+    .nav-mobile-link {display:block; float:left; width:33px; border-top:2px solid #fff; border-bottom:2px solid #fff; height:18px; position:relative; margin:28px 0 0 0}
+    .nav-mobile-link::after {content:""; display:block; position:absolute; left:0; top:6px; right:0; height:2px; background:#fff}
+    .nav-mobile-open .nav-mobile-link {border-color:transparent}
+    .nav-mobile-open .nav-mobile-link::before {content:""; display:block; position:absolute; left:0; top:6px; right:0; height:2px; background:#fff; transform:rotate(45deg)}
+    .nav-mobile-open .nav-mobile-link::after {transform:rotate(-45deg)}
+}
+
 .top-menu {float:right; font-size:14px; line-height:28px}
 .top-menu ul {margin:0; padding:0; list-style:none}
 .top-menu ul li {float:left; margin:0 0 0 18px; padding:0 0 0 18px; border-left:1px solid #47b488; color:#fff}
 .top-menu ul li:first-child {margin:0; padding:0; border-left:none}
 .top-menu ul li a {color:#fff; text-decoration:none}
-.top-menu ul li a:hover {text-decoration:underline}
+.desktop .top-menu ul li a:hover {text-decoration:underline}
+
+@media screen and (max-width:1209px) {
+    .top-menu {font-size:16px; line-height:74px}
+    .top-menu ul li {border-left:none; margin:0 0 0 50px; padding:0}
+    .top-menu ul li:first-child {margin:0; padding:0}
+}
 
 header {border-bottom:1px solid #dedede; padding:0 0 30px 0}
 
+@media screen and (max-width:1209px) {
+    header {padding:26px 0 24px 0; border-bottom:none}
+}
+
 .logo {float:left; width:154px; height:25px; margin:29px 0 0 0; background:url(../images/logo.png); position:relative}
 .logo a {display:block; position:absolute; left:0; top:0; right:0; bottom:0}
+
+@media screen and (max-width:1209px) {
+    .logo {float:none; margin:0 auto}
+}
 
 nav {float:right; margin:30px 0 0 0}
 nav ul {margin:0; padding:0; list-style:none}
@@ -40,7 +73,14 @@ nav ul li {float:left; margin:0 0 0 42px; padding:0}
 nav ul li:first-child {margin:0}
 nav ul li a {color:#707070; text-decoration:none}
 nav ul li.active a,
-nav ul li a:hover {color:#000}
+.desktop nav ul li a:hover {color:#000}
+
+@media screen and (max-width:1209px) {
+    nav {display:none}
+    .nav-mobile-open nav {display:block; float:none; margin:0; position:absolute; left:0; top:73px; background:#00925f; right:0; z-index:99}
+    .nav-mobile-open nav ul li {float:none; margin:0; border-top:1px solid #fff}
+    .nav-mobile-open nav ul li a {display:block; padding:10px 35px; color:#fff}
+}
 
 .welcome {position:relative; background:url(../images/welcome.jpg) no-repeat center; background-size:cover; margin:-1px 0 0 0}
 .welcome-content {max-width:526px; margin:0 auto}
@@ -49,14 +89,28 @@ nav ul li a:hover {color:#000}
 .welcome-hint {color:#fff; padding:9px 0 0 0}
 .welcome-link {padding:24px 0 0 0}
 .welcome-link a {display:block; width:264px; height:54px; border:2px solid rgba(129, 156, 180, 0.27); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
-.welcome-link a:hover {border-color:#fff}
+.desktop .welcome-link a:hover {border-color:#fff}
 .welcome-notice {position:relative; font-size:14px; line-height:18px; color:#7a838c; margin:68px 0 0 0; padding:0 0 121px 0}
 .welcome-notice::before {content:"*"; position:absolute; right:100%; top:0; margin-right:4px}
 .welcome-notice a {color:#7a838c}
 .welcome-next {float:right; margin:-265px -5px 0 0; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px; cursor:pointer; transition:all 0.2s}
-.welcome-next:hover {opacity:0.8}
+.desktop .welcome-next:hover {opacity:0.8}
 .welcome-next-text-1 {font-size:28px; line-height:28px; padding:45px 0 0 0}
 .welcome-next::after {content:""; display:block; width:14px; height:9px; background:url(../images/welcome-next.png); margin:14px auto 0 auto}
+
+@media screen and (max-width:1209px) {
+    .welcome {margin:0; background-image:url(../images/welcome-mobile.jpg)}
+    .welcome-title {font-size:50px; line-height:59px; padding:53px 0 0 0; text-align:center}
+    .welcome-text {font-size:26px; line-height:32px; text-align:center; padding:21px 0 0 0}
+    .welcome-hint {text-align:center}
+    .welcome-hint::before {content:""; display:block; width:191px; height:382px; margin:32px auto 48px auto; background:url(../images/welcome-mobile-phone.png)}
+    .welcome-link {padding:33px 0 0 0}
+    .welcome-link a {margin:0 auto}
+    .welcome-notice {text-align:center; padding:40px 0 63px 0; margin:0}
+    .welcome-notice::before {position:static; right:auto; top:auto; margin-right:0}
+    .welcome-notice a {white-space:nowrap}
+    .welcome-next {display:none}
+}
 
 .games {position:relative; width:100%; overflow:hidden}
 .games-inner {display:table; width:100%}
@@ -74,23 +128,43 @@ nav ul li a:hover {color:#000}
 .games-item-text {position:relative; padding:12px 0 0 0; z-index:1}
 .games-item-link {position:relative; padding:31px 0 0 0; z-index:1}
 .games-item-link a {display:block; width:264px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
-.games-item-link a:hover {border-color:#fff}
+.desktop .games-item-link a:hover {border-color:#fff}
+
+@media screen and (max-width:1209px) {
+    .games-inner {display:block; margin:0 -40px; width:auto}
+    .games-item {display:block; width:auto; padding:0 40px 94px 50px}
+    .games-item:nth-child(1) {background:#123b5f url(../images/games-bg-1-mobile.jpg) no-repeat right bottom}
+    .games-item:nth-child(2) {padding:0 40px 94px 50px; background:#224c72 url(../images/games-bg-2-mobile.jpg) no-repeat right bottom}
+    .games-item:nth-child(1)::before {left:5px}
+    .games-item:nth-child(2)::before {left:5px}
+    .games-item:nth-child(1)::after {display:none}
+    .games-item:nth-child(2)::after {display:none}
+    .games-item-type {padding:86px 0 0 0}
+    .games-item-title {font-size:28px; padding:6px 0 0 0}
+    .games-item-link a {width:224px}
+}
 
 .video {position:relative; background:url(../images/video.jpg) no-repeat center; background-size:cover; height:676px}
 .video-play {display:block; position:relative; color:#fff; text-decoration:none; text-align:center; font-size:33px; line-height:42px; height:676px; padding:239px 0 0 0}
 .video.play .video-play {display:none}
 .video-play-icon {display:block; width:106px; height:106px; border:2px solid #768ea4; border-radius:50%; margin:0 auto 20px auto; position:relative}
 .video-play-icon::before {content:""; display:block; position:absolute; left:42px; top:50%; border-left:27px solid #fff; border-top:20px solid transparent; border-bottom:20px solid transparent; margin-top:-20px}
-.video-play:hover .video-play-icon {border-color:#fff}
+.desktop .video-play:hover .video-play-icon {border-color:#fff}
 .video iframe {display:none; position:absolute; left:0; top:0; width:100%; height:100%; z-index:1}
 .video.play iframe {display:block}
+
+@media screen and (max-width:1209px) {
+    .video {height:469px}
+    .video-play {height:469px; padding:141px 0 0 0; font-size:28px; line-height:33px}
+    .video-play-icon {margin-bottom:23px}
+}
 
 .gifts {position:relative; z-index:1; margin:0 0 -92px 0; background:url(../images/gifts.jpg) no-repeat center; background-size:cover}
 .gifts-content {float:right; width:670px}
 .gifts-title {color:#c4cee2; font-size:33px; line-height:42px; padding:99px 0 0 0}
 .gifts-text-shop {color:#fff; padding:32px 0 0 0}
 .gifts-text-shop a {color:#fff; text-decoration:none}
-.gifts-text-shop a:hover {text-decoration:underline}
+.desktop .gifts-text-shop a:hover {text-decoration:underline}
 .gifts-list {padding:22px 0 0 0; margin:0 0 0 -12px}
 .gifts-list::after {content:""; display:block; clear:both}
 .gifts-item {float:left; width:147px; height:146px; background:#fff; border-radius:50%; margin:0 19px 0 0; position:relative; line-height:0}
@@ -105,6 +179,25 @@ nav ul li a:hover {color:#000}
 .gifts-notice {font-size:14px; color:#a4c3ed; padding:0 0 101px 0; position:relative; margin:42px 0 0 0}
 .gifts-notice::before {content:"*"; position:absolute; right:100%; top:0; margin-right:4px}
 
+@media screen and (max-width:1209px) {
+    .gifts {margin:0; background:#00164f url(../images/gifts-mobile.jpg) no-repeat left bottom; background-size:auto}
+    .gifts-content {float:none; width:auto}
+    .gifts-title {text-align:center; font-size:28px; line-height:33px; padding:76px 0 0 0}
+    .gifts-text-shop {text-align:center}
+    .gifts-list {margin:0 auto; width:313px; padding:18px 0 0 0}
+    .gifts-item {margin:0}
+    .gifts-item+.gifts-item {margin:0 0 0 19px}
+    .gifts-descr {margin:19px 0 0 0; width:100%; text-align:center}
+    .gifts-descr br {display:none}
+    .gifts-promo {text-align:center}
+    .gifts-text-partners {text-align:center}
+    .gifts-partners {margin:0 -20px}
+    .gifts-partners a {margin:0 0 0 20px}
+    .gifts-partners a:first-child {margin:0}
+    .gifts-notice {padding:0 0 330px 0; text-align:center; margin:17px 0 0 0}
+    .gifts-notice::before {position:static; right:auto; top:auto; margin-right:0}
+}
+
 .auth {margin:65px auto 0 auto; width:556px; border:1px solid #dedede}
 .auth-menu {font-size:30px; line-height:82px; text-align:center}
 .auth-menu ul {margin:0; padding:0; list-style:none}
@@ -112,7 +205,7 @@ nav ul li a:hover {color:#000}
 .auth-menu ul li {float:left; width:50%; margin:0; padding:0}
 .auth-menu ul li::before {display:none}
 .auth-menu ul li a {display:block; text-decoration:none; color:#87939e; background:#f3f3f3}
-.auth-menu ul li a:hover {color:#2f3e4b}
+.desktop .auth-menu ul li a:hover {color:#2f3e4b}
 .auth-menu ul li.active a {color:#2f3e4b; background:none; cursor:default}
 .auth-form {width:265px; margin:32px auto 69px auto}
 .auth-form form {margin:0; padding:0}
@@ -130,12 +223,17 @@ nav ul li a:hover {color:#000}
 .auth-form-forgot a {color:#c4cfd8}
 .auth-form-submit {margin:31px 0 0 0}
 .auth-form-submit input {display:block; vertical-align:top; border-radius:2px; background:#00925f; margin:0; padding:0; outline:none; overflow:visible; border:none; width:100%; height:55px; box-sizing:border-box; color:#fff; text-align:center; font:16px/55px MyriadPro, sans-serif; -webkit-appearance:none; cursor:pointer; transition:all 0.2s}
-.auth-form-submit input:hover {opacity:0.8}
+.desktop .auth-form-submit input:hover {opacity:0.8}
 .auth-form-social-title {text-align:center; margin:55px 0 0 0}
 .auth-form-social-links {text-align:center; font-size:0; line-height:0; letter-spacing:-1px; margin:12px 0 0 0}
 .auth-form-social-link {display:inline-block; vertical-align:middle; margin:0 5px}
 .auth-form-social-link a {transition:all 0.2s}
-.auth-form-social-link a:hover {opacity:0.8}
+.desktop .auth-form-social-link a:hover {opacity:0.8}
+
+@media screen and (max-width:1209px) {
+    .auth {margin:27px 40px 0 40px; width:auto}
+    .auth-menu {font-size:28px}
+}
 
 .reg-form-social-title {text-align:center; padding:23px 0 0 0}
 .reg-form-email-title {text-align:center; margin:42px 0 -13px 0}
@@ -155,6 +253,11 @@ nav ul li a:hover {color:#000}
 .reg-form-checkbox label.error {display:none !important}
 .reg-form-checkbox a {color:#87939e}
 
+@media screen and (max-width:1209px) {
+    .reg-form-checkbox {white-space:normal}
+    .reg-form-checkbox br {display:none}
+}
+
 .rating {position:relative; z-index:1; margin:-1px 0 -92px 0; background:#00925f; color:#fff; padding:91px 0 114px 0}
 .rating-title {text-align:center; font-weight:bold; font-size:66px; line-height:81px}
 .rating-form {width:492px; margin:26px auto 0 auto}
@@ -169,7 +272,14 @@ nav ul li a:hover {color:#000}
 .rating-form-input input:-ms-input-placeholder {opacity:1; color:#72d1b0}
 .rating-form-submit {float:right; width:119px}
 .rating-form-submit input {display:block; vertical-align:top; border-radius:2px; background:transparent; margin:0; padding:0; outline:none; overflow:visible; border:2px solid rgba(114, 209, 176, 0.8); width:100%; height:54px; box-sizing:border-box; color:#fff; text-align:center; font:16px/50px MyriadPro, sans-serif; -webkit-appearance:none; cursor:pointer; transition:all 0.2s}
-.rating-form-submit input:hover {border-color:#fff}
+.desktop .rating-form-submit input:hover {border-color:#fff}
+
+@media screen and (max-width:1209px) {
+    .rating {margin:0; padding:46px 0 78px 0}
+    .rating-title {text-align:center; font-size:50px; line-height:53px}
+    .rating-form {width:400px; margin:36px auto 0 auto}
+    .rating-form-input {width:262px}
+}
 
 .rating-list table {width:100%; border-collapse:collapse; margin:40px 0 0 0}
 .rating-list th {color:#72d1b0; vertical-align:top; font-size:33px; line-height:42px; padding:17px 30px 17px 0; text-align:left; font-weight:normal}
@@ -179,19 +289,41 @@ nav ul li a:hover {color:#000}
 .rating-list td:nth-child(3) {width:26%}
 .rating-list tr:first-child td {border-color:#39b288}
 .rating-item-info {display:inline-block; vertical-align:middle; position:relative; margin:-4px 0 0 6px; width:18px; height:18px; background:url(../images/rating-icon.png); opacity:0.5; transition:all 0.2s}
-.rating-item-info:hover {opacity:1}
+.desktop .rating-item-info:hover {opacity:1}
+.rating-list-label {display:none}
+
+@media screen and (max-width:1209px) {
+    .rating-list table {display:block; margin:11px 0 0 0}
+    .rating-list tr {display:block}
+    .rating-list thead {display:none}
+    .rating-list tbody {display:block}
+    .rating-list tbody tr {border-bottom:2px solid #179f6f; padding:32px 0}
+    .rating-list td {display:block; position:relative; padding:0 0 0 170px; border:none; margin:4px 0 0 0}
+    .rating-list td:nth-child(1) {width:auto}
+    .rating-list td:nth-child(2) {width:auto}
+    .rating-list td:nth-child(3) {width:auto}
+    .rating-list-label {display:block; position:absolute; left:0; top:0; color:#72d1b0}
+}
 
 .rating-pager {margin:50px 0 0 0}
 .rating-pager::after {content:""; display:block; clear:both}
 .rating-pager-prev {float:left; width:54px; height:54px; border:2px solid rgba(114, 209, 176, 0.8); background:url(../images/rating-pager-prev.png) no-repeat center; border-radius:2px}
-.rating-pager-prev:hover {border-color:#fff}
+.desktop .rating-pager-prev:hover {border-color:#fff}
 .rating-pager-next {float:right; width:54px; height:54px; border:2px solid rgba(114, 209, 176, 0.8); background:url(../images/rating-pager-next.png) no-repeat center; border-radius:2px}
-.rating-pager-next:hover {border-color:#fff}
+.desktop .rating-pager-next:hover {border-color:#fff}
 .rating-pager-links {margin:0 54px; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .rating-pager-links a,
 .rating-pager-links span {display:inline-block; vertical-align:top; border-bottom:2px solid rgba(114, 209, 176, 0.8); font-size:16px; line-height:52px; letter-spacing:0; color:#87d9bd; text-decoration:none; padding:0 10px; min-width:44px}
-.rating-pager-links a:hover {color:#fff}
+.desktop .rating-pager-links a:hover {color:#fff}
 .rating-pager-links a.active {color:#fff; border-color:#fff}
+.rating-pager-more {display:none}
+
+@media screen and (max-width:1209px) {
+    .rating-pager {display:none}
+    .rating-pager-more {display:block; margin:40px 0 0 0}
+    .rating-pager-more a {display:block; width:100%; height:54px; border:2px solid rgba(114, 209, 176, 0.8); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
+    .desktop .rating-pager-more a:hover {border-color:#fff}
+}
 
 .selfie-descr {background:#113e65 url(../images/selfie-descr.png) no-repeat center; background-size:cover; position:relative; margin:-1px 0 0 0}
 .selfie-header::after {content:""; display:block; clear:both}
@@ -241,7 +373,7 @@ nav ul li a:hover {color:#000}
 .contest-camera video {position:absolute; left:0; top:0; width:100%; height:100%}
 .contest-camera-btn {display:none; position:absolute; left:50%; bottom:40px; background:#555; opacity:.6; padding:10px; border-radius:50%; margin:0 0 0 -32px; line-height:0}
 .contest-camera-btn svg {display:block}
-.contest-camera-btn:hover {opacity:1}
+.desktop .contest-camera-btn:hover {opacity:1}
 .contest-camera-btn path {fill:#fff}
 .contest-photo.camera .contest-camera-btn {display:block}
 
@@ -259,9 +391,9 @@ nav ul li a:hover {color:#000}
 .contest-photo-editor-btns a img {vertical-align:middle}
 .contest-photo-editor-btn-hint {display:none; position:absolute; left:-7px; top:49px; white-space:nowrap; color:#fff; font-size:14px; line-height:29px; padding:0 20px; background:rgba(0, 0, 0, 0.75)}
 .contest-photo-editor-btn-hint::before {content:""; display:block; position:absolute; left:24px; top:-8px; width:0; height:0; border-bottom:8px solid rgba(0, 0, 0, 0.75); border-right:8px solid transparent}
-.contest-photo-editor-btns a:hover .contest-photo-editor-btn-hint {display:block}
+.desktop .contest-photo-editor-btns a:hover .contest-photo-editor-btn-hint {display:block}
 .contest-photo-item-next {display:block; position:absolute; left:40px; bottom:40px; right:40px; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
-.contest-photo-item-next:hover {opacity:0.8}
+.desktop .contest-photo-item-next:hover {opacity:0.8}
 .contest-photo-item-next::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
 
 .contest-describe {background:#000; padding:0 0 91px 0}
@@ -277,7 +409,7 @@ nav ul li a:hover {color:#000}
 .describe-textarea textarea:-ms-input-placeholder {opacity:1; color:#87939e}
 .describe-next {border-top:2px solid #d4dce3; padding:30px 0 0 0}
 .describe-next a {display:block; width:100%; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
-.describe-next a:hover {opacity:0.8}
+.desktop .describe-next a:hover {opacity:0.8}
 .describe-next a::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
 .describe-notice {position:relative; font-size:14px; line-height:20px; color:#87939e; margin:17px 0 0 0}
 .describe-notice span {color:#00925f}
@@ -298,7 +430,7 @@ nav ul li a:hover {color:#000}
 .share-link {position:relative; margin:30px 0 0 0}
 .share-link:first-child {margin:0}
 .share-link-item {display:block; color:#fff; text-decoration:none; border-radius:3px; padding:0 0 0 26px; height:54px; font-size:16px; line-height:54px; position:relative}
-.share-link-item:hover {opacity:0.8}
+.desktop .share-link-item:hover {opacity:0.8}
 .share-link-vk {background:#5281b9}
 .share-link-vk::after {content:""; display:block; width:21px; height:12px; background:url(../images/share-vk.png); position:absolute; right:21px; top:20px}
 .share-link-fb {background:#3a559f}
@@ -313,10 +445,14 @@ nav ul li a:hover {color:#000}
 .share-link-form-input input:-ms-input-placeholder {opacity:1; color:#87939e}
 .share-link-form-submit {border-top:2px solid #d4dce3; padding:19px 0 0 0; margin:5px 0 0 0}
 .share-link-form-submit a {display:block; width:100%; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
-.share-link-form-submit a:hover {opacity:0.8}
+.desktop .share-link-form-submit a:hover {opacity:0.8}
 .share-link-form-submit a::after {content:"→"; font:18px/54px Arial, Helvertica, sans-serif; margin:0 0 0 8px}
 
 footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:relative}
+
+@media screen and (max-width:1209px) {
+    footer {height:461px; border-top:none; margin-top:-461px; padding:80px 0 0 0}
+}
 
 .footer-logo {float:left; width:154px; height:25px; margin:60px 0 0 0; background:url(../images/logo.png); position:relative}
 .footer-logo a {display:block; position:absolute; left:0; top:0; right:0; bottom:0}
@@ -324,12 +460,21 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .footer-links p {margin:0; padding:56px 0 0 0}
 .footer-social {float:right; margin:60px 0 0 0}
 .footer-social a {float:left; width:43px; height:42px; background:url(../images/footer-social.png); margin:0 0 0 8px; transition:all 0.2s}
-.footer-social a:hover {opacity:0.8}
+.desktop .footer-social a:hover {opacity:0.8}
 .footer-social a.footer-social-vk {background-position:left top}
 .footer-social a.footer-social-ig {background-position:-44px top}
 .footer-social a.footer-social-yt {background-position:-88px top}
 .footer-social a.footer-social-fb {background-position:-132px top}
 .footer-copyrights {float:right; clear:right; padding:15px 0 0 0; color:#707070}
+
+@media screen and (max-width:1209px) {
+    .footer-logo {margin:0; float:none}
+    .footer-links {float:none; margin:0; padding:8px 0 0 0}
+    .footer-links p {padding:28px 0 0 0}
+    .footer-social {float:none; margin:30px 0 0 0}
+    .footer-social::after {content:""; display:block; clear:both}
+    .footer-copyrights {float:none; padding:35px 0 0 0}
+}
 
 .window-open body {overflow:hidden}
 
@@ -339,7 +484,7 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .window-container-load {position:fixed; left:-9999px; top:-9999px}
 .window-content {position:relative; background:#fff}
 .window-close {display:block; position:absolute; width:15px; height:14px; right:20px; top:20px; background:url(../images/window-close.png)}
-.window-close:hover {opacity:0.8}
+.desktop .window-close:hover {opacity:0.8}
 
 .window-balls {width:820px; padding:47px 50px 54px 50px}
 .window-balls-title {color:#000; font-size:33px; line-height:42px}
@@ -353,9 +498,27 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .window-balls-notice a {color:#76828c}
 .window-balls-notice img {vertical-align:middle; margin:-6px 0 0 6px}
 .window-balls-notice em {color:#000; font-weight:bold}
+.window-balls-list-label {display:none}
+
+@media screen and (max-width:1209px) {
+    .window-balls {width:400px; padding:27px 30px 54px 30px}
+    .window-balls-title {font-size:28px}
+
+    .window-balls-list table {display:block; margin:0}
+    .window-balls-list tr {display:block}
+    .window-balls-list thead {display:none}
+    .window-balls-list tbody {display:block}
+    .window-balls-list tbody tr {border-bottom:2px solid #e9edf1; padding:23px 0 17px 0}
+    .window-balls-list td {display:block; position:relative; padding:0 0 0 120px; border:none; margin:4px 0 0 0}
+    .window-balls-list-label {display:block; position:absolute; left:0; top:0; color:#76818c}
+}
 
 .copy-button {display:inline-block; vertical-align:middle; margin:-6px 0 0 6px; width:16px; height:20px; padding:0; outline:none; border:none; background:url(../images/copy.svg); cursor:pointer; -webkit-appearance:none}
 .gifts-promo .copy-button {background:url(../images/copy2.svg)}
+
+@media screen and (max-width:1209px) {
+    .copy-button {display:none}
+}
 
 .game {background:#000; position:relative; margin:-1px 0 -92px 0; z-index:1}
 .game-descr {height:707px; background:url(../images/game-descr.jpg) no-repeat center; background-size:cover; color:#fff; padding:92px 0 0 0}
@@ -376,7 +539,7 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .game-descr-rules a {color:#fff}
 .game-descr-link {margin:16px 0 0 0}
 .game-descr-link a {display:block; width:264px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
-.game-descr-link a:hover {border-color:#fff}
+.desktop .game-descr-link a:hover {border-color:#fff}
 
 .game-content {display:none; background:#000 url(../images/game-bg.jpg)}
 .game-header {position:relative; height:441px}
@@ -408,7 +571,7 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .game-info-3 .game-info-round-3 {display:inline}
 .game-start {float:right; display:none}
 .game-start a {display:block; width:220px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
-.game-start a:hover {border-color:#fff}
+.desktop .game-start a:hover {border-color:#fff}
 .game-rounds-images {margin:0 -12px}
 .game-rounds-images::after {content:""; display:block; clear:both}
 .game-rounds-image {float:left; width:220px; height:150px; margin:24px 12px 0 12px; position:relative; box-shadow:0 3px 0 0 rgba(0, 0, 0, 0.45); position:relative}
@@ -429,9 +592,19 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 
 .action {position:relative; z-index:1; margin:-1px 0 -92px 0}
 
+@media screen and (max-width:1209px) {
+    .action {margin:0}
+}
+
 .action-header {background:#1b1c1e url(../images/action-header.jpg) no-repeat right center}
 .action-header-content {display:table; width:100%}
 .action-header-title {display:table-cell; vertical-align:middle; font-weight:bold; font-size:66px; line-height:70px; color:#fff; height:203px}
+
+@media screen and (max-width:1209px) {
+    .action-header {background:#1b1c1e url(../images/action-header-mobile.jpg) no-repeat center; background-size:cover}
+    .action-header-content {display:block}
+    .action-header-title {display:block; font-size:50px; line-height:59px; height:auto; text-align:center; padding:53px 0}
+}
 
 .action-item {color:#fff; background:no-repeat center; background-size:cover; padding:77px 0 92px 0}
 .action-item-1 {background-image:url(../images/action-item-1.jpg)}
@@ -450,9 +623,9 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .action-item-links {margin:41px 0 0 0}
 .action-item-links::after {content:""; display:block; clear:both}
 .action-item-link-rules {float:left; display:block; width:304px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
-.action-item-link-rules:hover {border-color:#fff}
+.desktop .action-item-link-rules:hover {border-color:#fff}
 .action-item-link-start {float:left; margin:0 0 0 30px; display:block; width:264px; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
-.action-item-link-start:hover {opacity:0.8}
+.desktop .action-item-link-start:hover {opacity:0.8}
 .action-item-gifts {padding:80px 0 0 0}
 .action-item-gifts::after {content:""; display:block; clear:both}
 .action-item-gift {float:left; width:265px; margin:0 0 0 90px}
@@ -461,3 +634,18 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .action-item-gift-photo img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:none}
 .action-item-gift-place {font-size:20px; line-height:28px; padding:21px 0 0 0}
 .action-item-gift-text {font-size:16px; line-height:28px}
+
+@media screen and (max-width:1209px) {
+    .action-item {padding:57px 0 59px 0}
+    .action-item-1 {background:#113e65 url(../images/action-item-1-mobile.jpg) no-repeat}
+    .action-item-2 {background:#101206 url(../images/action-item-2-mobile.jpg) no-repeat; background-size:100% auto}
+    .action-item-title {font-size:28px}
+    .action-item-title::before {width:95px; height:95px; left:-40px; top:-29px}
+    .action-item-1 .action-item-title::before {background-size:cover}
+    .action-item-2 .action-item-title::before {background-size:cover}
+    .action-item-name {font-size:42px; line-height:46px; margin:16px 0 0 0}
+    .action-item-link-rules {float:none}
+    .action-item-link-start {float:none; margin:20px 0 0 0}
+    .action-item-gift {float:none; margin:55px 0 0 0}
+    .action-item-gift:first-child {margin:0}
+}
