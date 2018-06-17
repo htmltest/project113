@@ -426,3 +426,38 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 .share-link-notice {position:absolute; left:100%; top:50%; width:210px; color:#fff; font-size:12px; line-height:14px; transform:translateY(-50%); margin-left:20px}
 
 .game-finish-images {display:none}
+
+.action {position:relative; z-index:1; margin:-1px 0 -92px 0}
+
+.action-header {background:#1b1c1e url(../images/action-header.jpg) no-repeat right center}
+.action-header-content {display:table; width:100%}
+.action-header-title {display:table-cell; vertical-align:middle; font-weight:bold; font-size:66px; line-height:70px; color:#fff; height:203px}
+
+.action-item {color:#fff; background:no-repeat center; background-size:cover; padding:77px 0 92px 0}
+.action-item-1 {background-image:url(../images/action-item-1.jpg)}
+.action-item-2 {background-image:url(../images/action-item-2.jpg)}
+.action-item-title {position:relative; font-size:33px; line-height:42px}
+.action-item-title span {position:relative}
+.action-item-title::before {content:""; display:block; position:absolute; left:-53px; top:-45px; width:123px; height:123px}
+.action-item-1 .action-item-title::before {background:url(../images/action-icon-1.png)}
+.action-item-2 .action-item-title::before {background:url(../images/action-icon-2.png)}
+.action-item-name {position:relative; font-size:55px; font-weight:bold; line-height:60px; margin:13px 0 0 0}
+.action-item-name::before {content:"«"; position:absolute; right:100%; top:4px; font-weight:normal; font-size:50px; vertical-align:bottom; margin:0 7px 0 0}
+.action-item-name::after {content:"»"; font-weight:normal; font-size:50px; margin:0 0 0 7px; position:relative; top:4px}
+.action-item-text {margin:24px 0}
+.action-item-text {font-size:20px; line-height:28px}
+.action-item-text p {margin:18px 0; padding:0}
+.action-item-links {margin:41px 0 0 0}
+.action-item-links::after {content:""; display:block; clear:both}
+.action-item-link-rules {float:left; display:block; width:304px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
+.action-item-link-rules:hover {border-color:#fff}
+.action-item-link-start {float:left; margin:0 0 0 30px; display:block; width:264px; text-decoration:none; color:#fff; font-size:16px; line-height:54px; letter-spacing:0; text-align:center; height:54px; border-radius:2px; background:#00925f; transition:all 0.2s}
+.action-item-link-start:hover {opacity:0.8}
+.action-item-gifts {padding:80px 0 0 0}
+.action-item-gifts::after {content:""; display:block; clear:both}
+.action-item-gift {float:left; width:265px; margin:0 0 0 90px}
+.action-item-gift:first-child {margin:0}
+.action-item-gift-photo {height:265px; position:relative; margin:0 0 0 -23px}
+.action-item-gift-photo img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:none}
+.action-item-gift-place {font-size:20px; line-height:28px; padding:21px 0 0 0}
+.action-item-gift-text {font-size:16px; line-height:28px}

@@ -712,6 +712,12 @@ $(document).ready(function() {
             $('.game-finish').show();
             var summMinutes = Math.floor(gameTimeTotal / 60);
             var summSeconds = gameTimeTotal - summMinutes * 60;
+            if (summMinutes < 10) {
+                summMinutes = '0' + summMinutes;
+            }
+            if (summSeconds < 10) {
+                summSeconds = '0' + summSeconds;
+            }
             var gameTimeTotalString = summMinutes + ':' + summSeconds;
 
             var canvas = document.getElementById('game-finish-editor');
