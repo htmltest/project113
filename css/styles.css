@@ -356,3 +356,73 @@ footer {height:261px; border-top:1px solid #dedede; margin-top:-261px; position:
 
 .copy-button {display:inline-block; vertical-align:middle; margin:-6px 0 0 6px; width:16px; height:20px; padding:0; outline:none; border:none; background:url(../images/copy.svg); cursor:pointer; -webkit-appearance:none}
 .gifts-promo .copy-button {background:url(../images/copy2.svg)}
+
+.game {background:#000; position:relative; margin:-1px 0 -92px 0; z-index:1}
+.game-descr {height:707px; background:url(../images/game-descr.jpg) no-repeat center; background-size:cover; color:#fff; padding:92px 0 0 0}
+.game-descr-inner {max-width:490px; margin:0 auto}
+.game-descr-title {font-size:33px; line-height:42px}
+.game-descr-name {font-weight:bold; font-size:66px; line-height:70px; position:relative; white-space:nowrap; margin:3px 0 0 0}
+.game-descr-name::before {content:"«"; position:absolute; right:100%; top:0; margin-right:7px}
+.game-descr-name::after {content:"»"}
+.game-descr-text {line-height:19px; margin:5px 0 0 0}
+.game-descr-gifts {padding:36px 0 0 0}
+.game-descr-gifts::after {content:""; display:block; clear:both}
+.game-descr-gift {float:left; width:82px; height:82px; background:#00925f; border-radius:50%; position:relative; margin:0 0 0 18px}
+.game-descr-gift:first-child {margin:0}
+.game-descr-gift img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
+.game-descr-steps {margin:30px 0 0 0}
+.game-descr-steps p {margin:0; padding:0}
+.game-descr-rules {margin:30px 0 0 0}
+.game-descr-rules a {color:#fff}
+.game-descr-link {margin:16px 0 0 0}
+.game-descr-link a {display:block; width:264px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
+.game-descr-link a:hover {border-color:#fff}
+
+.game-content {display:none; background:#000 url(../images/game-bg.jpg)}
+.game-header {position:relative; height:441px}
+.game-header-item {position:absolute; left:0; top:0; right:0; bottom:0; background:#000 no-repeat center; background-size:cover; opacity:0; transition:all 0.2s}
+.game-header-item.active {opacity:1}
+.game-header-item-content {padding:0 190px 0 325px; color:#fff}
+.game-header-item-title {font-weight:bold; font-size:48px; line-height:60px; padding:90px 0 0 0}
+.game-header-item-round-title {font-size:33px; line-height:42px; text-transform:uppercase; padding:25px 0 0 0}
+.game-header-item-round-text {font-size:24px; line-height:29px; padding:9px 0 0 0}
+
+.game-field {padding:45px 0}
+.game-field-inner {max-width:1032px; margin:0 auto; padding:72px 40px 35px 40px; border-radius:10px; background:rgba(12, 12, 13, 0.67)}
+.game-rounds-stat-item {position:relative; color:#00925f; margin:0 0 0 212px; font-size:24px; line-height:36px}
+.game-rounds-stat-item.active {color:#fff}
+.game-rounds-stat-item.active::before {content:""; display:block; width:16px; height:13px; position:absolute; left:-25px; top:8px; background:url(../images/game-rounds-stat-item.png)}
+.game-rounds-stat-item-result {display:none}
+.game-rounds-stat-item.active .game-rounds-stat-item-result {display:inline}
+.game-rounds-stat-item:last-child {color:#fff}
+.game-rounds-ctrl {color:#fff; padding:43px 0 0 0}
+.game-rounds-ctrl::after {content:""; display:block; clear:both}
+.game-clicks {float:left; font-weight:bold; font-size:33px; line-height:54px; width:104px; padding:0 0 0 47px; background:url(../images/game-clicks.png) no-repeat left 3px}
+.game-time {float:left; font-weight:bold; font-size:33px; line-height:54px; padding:0 0 0 42px; background:url(../images/game-time.png) no-repeat left 7px}
+.game-info {display:none; float:left; font-weight:bold; font-size:16px; line-height:19px; padding:8px 0 0 46px; margin:0 0 0 43px; background:url(../images/game-info.png) no-repeat left 5px}
+.game-info-round-1 {display:none}
+.game-info-1 .game-info-round-1 {display:inline}
+.game-info-round-2 {display:none}
+.game-info-2 .game-info-round-2 {display:inline}
+.game-info-round-3 {display:none}
+.game-info-3 .game-info-round-3 {display:inline}
+.game-start {float:right; display:none}
+.game-start a {display:block; width:220px; height:54px; border:2px solid rgba(108, 144, 178, 0.74); color:#fff; line-height:50px; text-align:center; text-decoration:none; border-radius:2px}
+.game-start a:hover {border-color:#fff}
+.game-rounds-images {margin:0 -12px}
+.game-rounds-images::after {content:""; display:block; clear:both}
+.game-rounds-image {float:left; width:220px; height:150px; margin:24px 12px 0 12px; position:relative; box-shadow:0 3px 0 0 rgba(0, 0, 0, 0.45); position:relative}
+.game-rounds-image::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#000 url(../images/game-back.png)}
+.game-rounds-images.openall .game-rounds-image::after {display:none}
+.game-rounds-image.open::after {display:none}
+
+.game-finish {display:none; margin:0 0 0 212px; color:#fff}
+.game-finish-title {font-size:33px; line-height:42px; font-weight:bold; padding:65px 0 0 0}
+.game-finish-textarea {width:525px; padding:17px 0 0 0}
+.game-finish-textarea textarea {position:relative; border:none; font:16px/24px MyriadPro, sans-serif; color:#404b55; vertical-align:top; margin:0; padding:10px; width:100%; height:182px; box-sizing:border-box; outline:none; border-radius:3px; background:#fff; -webkit-appearance:none; resize:none; overflow:auto}
+.game-finish-share-title {font-size:33px; line-height:42px; padding:19px 0 0 0}
+.game-finish-share {position:relative; width:300px; margin:14px 0 40px 0}
+.game-finish-share .share-links {position:relative; left:auto; top:auto; transform:none; margin:0}
+.share-link-notice {position:absolute; left:100%; top:50%; width:210px; color:#fff; font-size:12px; line-height:14px; transform:translateY(-50%); margin-left:20px}
+
+.game-finish-images {display:none}
