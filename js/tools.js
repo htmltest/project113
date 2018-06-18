@@ -378,12 +378,6 @@ $(document).ready(function() {
                 "curText": $('.share-textarea textarea').val()
             };
 
-            $('.contest-list').removeClass('contest-list-describe').addClass('contest-list-share');
-            $('.contest-step.active').removeClass('active');
-            $('.contest-step-4').addClass('active');
-            $('.contest').height($('.contest-step.active').height());
-            $('.share-textarea textarea').val($('.describe-textarea textarea').val());
-
             var canvas = document.getElementById('social-editor');
             var context = canvas.getContext('2d');
             context.clearRect(0, 0, canvas.width, canvas.height);
@@ -414,6 +408,7 @@ $(document).ready(function() {
                 $('#social-editor-img').attr('src', canvas.toDataURL('image/jpeg'));
 
                 dataTransfer["curIMG"] = $('#social-editor-img').attr('src');
+                gotoSharingContest();
             };
             imgTheme.src = $('.share-img-to-social').data('border');
 
@@ -447,12 +442,34 @@ $(document).ready(function() {
                 $('#social-editor-img2').attr('src', canvas2.toDataURL('image/jpeg'));
 
                 dataTransfer["curIMG2"] = $('#social-editor-img2').attr('src');
+                gotoSharingContest();
             };
             imgTheme2.src = $('.share-img-to-social').data('border2');
 
         } else {
             alert('Необходимо ввести текст');
         }
+
+        function gotoSharingContest() {
+            if (typeof dataTransfer["curIMG"] !== 'undefined' && typeof dataTransfer["curIMG2"] !== 'undefined') {
+                $.ajax({
+                    type: 'POST',
+                    url: 'files/canvas.json',
+                    dataType: 'json',
+                    data: dataTransfer,
+                    cache: false
+                }).done(function(data) {
+                    console.log(data.p);
+
+                    $('.contest-list').removeClass('contest-list-describe').addClass('contest-list-share');
+                    $('.contest-step.active').removeClass('active');
+                    $('.contest-step-4').addClass('active');
+                    $('.contest').height($('.contest-step.active').height());
+                    $('.share-textarea textarea').val($('.describe-textarea textarea').val());
+                });
+            }
+        }
+
         e.preventDefault();
     });
 
