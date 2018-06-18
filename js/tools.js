@@ -423,12 +423,12 @@ $(document).ready(function() {
             var newY2 = -343 * imgZoom;
             if (imgWidth > imgHeight) {
                 var diffHeight2 = newHeight2 / imgHeight;
-                newWidth2 = imgWidth * diffHeight;
+                newWidth2 = imgWidth * diffHeight2;
                 newX2 = -(newWidth2 - 687 * imgZoom) / 2 - 343 * imgZoom;
             } else {
                 var diffWidth2 = newWidth2 / imgWidth;
                 newHeight2 = imgHeight * diffWidth2;
-                newY = -(newHeight2 - 687 * imgZoom) / 2 - 343 * imgZoom;
+                newY2 = -(newHeight2 - 687 * imgZoom) / 2 - 343 * imgZoom;
             }
 
             context2.save();
