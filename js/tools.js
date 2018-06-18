@@ -697,50 +697,53 @@ $(document).ready(function() {
         $('.game-rounds-stat-item').eq(curRound - 1).addClass('active');
         var newPoints = Number($('.game-rounds-stat-item-result-points').html());
         gameTimeTotal += gameTimeSecondsAll;
-        if (gameTimeSecondsAll <= maxRoundTime) {
+        if (gameTimeSecondsAll <= maxRoundTime && ($('.game-rounds-image.success').length == $('.game-rounds-image').length)) {
             newPoints += maxRoundTime * 10 + (maxRoundTime - gameTimeSecondsAll) * 10;
         }
         $('.game-rounds-stat-item-result-points').html(newPoints);
         $('.game-info-count').html($('.game-rounds-image.success').length);
         $('.game-info-time').html(gameTimeSecondsAll);
         $('.game-info').removeClass('game-info-1 game-info-2 game-info-3').addClass('game-info-' + curRound).show();
-        if (curRound < 3) {
-            curRound++;
-            loadImages();
-        } else {
-            $('.game-rounds-ctrl, .game-rounds-images').hide();
-            $('.game-finish').show();
-            var summMinutes = Math.floor(gameTimeTotal / 60);
-            var summSeconds = gameTimeTotal - summMinutes * 60;
-            if (summMinutes < 10) {
-                summMinutes = '0' + summMinutes;
+        window.setTimeout(function() {
+            if (curRound < 3) {
+                curRound++;
+                loadImages();
+                $('html, body').animate({'scrollTop': $('.game-header').offset().top});
+            } else {
+                $('.game-rounds-ctrl, .game-rounds-images').hide();
+                $('.game-finish').show();
+                var summMinutes = Math.floor(gameTimeTotal / 60);
+                var summSeconds = gameTimeTotal - summMinutes * 60;
+                if (summMinutes < 10) {
+                    summMinutes = '0' + summMinutes;
+                }
+                if (summSeconds < 10) {
+                    summSeconds = '0' + summSeconds;
+                }
+                var gameTimeTotalString = summMinutes + ':' + summSeconds;
+
+                var canvas = document.getElementById('game-finish-editor');
+                var context = canvas.getContext('2d');
+                context.fillStyle = '#ffffff';
+                context.strokeStyle = '#ffffff';
+                context.font = 'bold 64px/70px MyriadPro, sans-serif';
+                context.fillText(gameTimeTotalString, 158, 273);
+                context.fillText(newPoints, 354, 273);
+                $('#game-finish-img').attr('src', canvas.toDataURL('image/jpeg'));
+
+                var canvas2 = document.getElementById('game-finish-editor2');
+                var context2 = canvas2.getContext('2d');
+                context2.fillStyle = '#ffffff';
+                context2.strokeStyle = '#ffffff';
+                context2.font = 'bold 64px/70px MyriadPro, sans-serif';
+                context2.fillText(gameTimeTotalString, 115, 370);
+                context2.fillText(newPoints, 311, 370);
+                $('#game-finish-img2').attr('src', canvas2.toDataURL('image/jpeg'));
+
+                gameResult["curIMG"] = $('#game-finish-img').attr('src');
+                gameResult["curIMG2"] = $('#game-finish-img2').attr('src');
             }
-            if (summSeconds < 10) {
-                summSeconds = '0' + summSeconds;
-            }
-            var gameTimeTotalString = summMinutes + ':' + summSeconds;
-
-            var canvas = document.getElementById('game-finish-editor');
-            var context = canvas.getContext('2d');
-            context.fillStyle = '#ffffff';
-            context.strokeStyle = '#ffffff';
-            context.font = 'bold 64px/70px MyriadPro, sans-serif';
-            context.fillText(gameTimeTotalString, 158, 273);
-            context.fillText(newPoints, 354, 273);
-            $('#game-finish-img').attr('src', canvas.toDataURL('image/jpeg'));
-
-            var canvas2 = document.getElementById('game-finish-editor2');
-            var context2 = canvas2.getContext('2d');
-            context2.fillStyle = '#ffffff';
-            context2.strokeStyle = '#ffffff';
-            context2.font = 'bold 64px/70px MyriadPro, sans-serif';
-            context2.fillText(gameTimeTotalString, 115, 370);
-            context2.fillText(newPoints, 311, 370);
-            $('#game-finish-img2').attr('src', canvas2.toDataURL('image/jpeg'));
-
-            gameResult["curIMG"] = $('#game-finish-img').attr('src');
-            gameResult["curIMG2"] = $('#game-finish-img2').attr('src');
-        }
+        }, 1000);
     }
 
     $('.nav-mobile-link').click(function(e) {
