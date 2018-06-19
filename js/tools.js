@@ -643,6 +643,15 @@ $(document).ready(function() {
         window.setTimeout(function() {
             $('.game-rounds-images').removeClass('openall');
             $('.game-rounds-image').removeClass('open success');
+            $.ajax({
+                type: 'POST',
+                url: 'files/canvas.json',
+                dataType: 'json',
+                data: {
+                    "round": curRound
+                },
+                cache: false
+            });
             isGaming = true;
             gameTimeSecondsAll = 0;
             gameTimeSeconds = 0;
