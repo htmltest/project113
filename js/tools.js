@@ -737,6 +737,18 @@ $(document).ready(function() {
                 $('.game-time .minutes').html('00');
                 $('.game-time .hours').html('00');
                 $('.game-clicks').html('0');
+                var roundResult = {
+                    "round": 1,
+                    "time" : gameTimeSecondsAll,
+                    "card" : $('.game-rounds-image.success').length,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'files/canvas.json',
+                    dataType: 'json',
+                    data: roundResult,
+                    cache: false
+                });
                 break;
             case 2:
                 gameResult.time2 = gameTimeSecondsAll;
@@ -747,6 +759,18 @@ $(document).ready(function() {
                 $('.game-time .minutes').html('00');
                 $('.game-time .hours').html('00');
                 $('.game-clicks').html('0');
+                var roundResult = {
+                    "round": 1,
+                    "time" : gameTimeSecondsAll,
+                    "card" : $('.game-rounds-image.success').length,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'files/canvas.json',
+                    dataType: 'json',
+                    data: roundResult,
+                    cache: false
+                });
                 break;
             case 3:
                 gameResult.time3 = gameTimeSecondsAll;
@@ -755,6 +779,18 @@ $(document).ready(function() {
                 $('.game-time .minutes').html('00');
                 $('.game-time .hours').html('00');
                 $('.game-clicks').html('0');
+                var roundResult = {
+                    "round": 1,
+                    "time" : gameTimeSecondsAll,
+                    "card" : $('.game-rounds-image.success').length,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'files/canvas.json',
+                    dataType: 'json',
+                    data: roundResult,
+                    cache: false
+                });
                 break;
         }
         $('.game-rounds-stat-item').eq(curRound - 1).find('.game-rounds-stat-item-result-count').html($('.game-rounds-image.success').length);
