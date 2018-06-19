@@ -760,7 +760,7 @@ $(document).ready(function() {
                 $('.game-time .hours').html('00');
                 $('.game-clicks').html('0');
                 var roundResult = {
-                    "round": 1,
+                    "round": 2,
                     "time" : gameTimeSecondsAll,
                     "card" : $('.game-rounds-image.success').length,
                 };
@@ -780,7 +780,7 @@ $(document).ready(function() {
                 $('.game-time .hours').html('00');
                 $('.game-clicks').html('0');
                 var roundResult = {
-                    "round": 1,
+                    "round": 3,
                     "time" : gameTimeSecondsAll,
                     "card" : $('.game-rounds-image.success').length,
                 };
