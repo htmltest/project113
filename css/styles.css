@@ -93,7 +93,7 @@ nav ul li.active a,
 .welcome-notice {position:relative; font-size:14px; line-height:18px; color:#7a838c; margin:68px 0 0 0; padding:0 0 121px 0}
 .welcome-notice::before {content:"*"; position:absolute; right:100%; top:0; margin-right:4px}
 .welcome-notice a {color:#7a838c}
-.welcome-next {float:right; margin:-265px -5px 0 0; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px; cursor:pointer; transition:all 0.2s}
+.welcome-next {display:block; position:fixed; z-index:99; left:10px; bottom:10px; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px; cursor:pointer; transition:all 0.2s}
 .desktop .welcome-next:hover {opacity:0.8}
 .welcome-next-text-1 {font-size:28px; line-height:28px; padding:45px 0 0 0}
 .welcome-next::after {content:""; display:block; width:14px; height:9px; background:url(../images/welcome-next.png); margin:14px auto 0 auto}

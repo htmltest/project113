@@ -446,12 +446,32 @@ $(document).ready(function() {
             };
             imgTheme2.src = $('.share-img-to-social').data('border2');
 
+            var canvas3 = document.getElementById('social-editor3');
+            var context3 = canvas3.getContext('2d');
+            context3.clearRect(0, 0, canvas3.width, canvas3.height);
+            context3.fillRect(0, 0, canvas3.width, canvas3.height);
+
+            context3.save();
+            context3.translate(210 + imgLeft + 331, 210 + imgTop + 31);
+            context3.rotate((exifOrientation + imgRotate) * TO_RADIANS);
+            context3.drawImage(img, newX, newY, newWidth, newHeight);
+            context3.restore();
+            var imgTheme3 = new Image();
+            imgTheme3.onload = function() {
+                context3.drawImage(imgTheme3, 0, 0, canvas3.width, canvas3.height);
+                $('#social-editor-img3').attr('src', canvas3.toDataURL('image/jpeg'));
+
+                dataTransfer["curIMG3"] = $('#social-editor-img3').attr('src');
+                gotoSharingContest();
+            };
+            imgTheme3.src = $('.share-img-to-social').data('border3');
+
         } else {
             alert('Необходимо ввести текст');
         }
 
         function gotoSharingContest() {
-            if (typeof dataTransfer["curIMG"] !== 'undefined' && typeof dataTransfer["curIMG2"] !== 'undefined') {
+            if (typeof dataTransfer["curIMG"] !== 'undefined' && typeof dataTransfer["curIMG2"] !== 'undefined' && typeof dataTransfer["curIMG3"] !== 'undefined') {
                 $.ajax({
                     type: 'POST',
                     url: 'files/canvas.json',
@@ -533,6 +553,17 @@ $(document).ready(function() {
             context2.drawImage(imgTheme2, 0, 0, canvas2.width, canvas2.height);
         };
         imgTheme2.src = $('.game-finish-images').data('border2');
+
+        var canvas3 = document.getElementById('game-finish-editor3');
+        var context3 = canvas3.getContext('2d');
+        context3.clearRect(0, 0, canvas3.width, canvas3.height);
+        context3.fillRect(0, 0, canvas3.width, canvas3.height);
+
+        var imgTheme3 = new Image();
+        imgTheme3.onload = function() {
+            context3.drawImage(imgTheme3, 0, 0, canvas3.width, canvas3.height);
+        };
+        imgTheme3.src = $('.game-finish-images').data('border3');
     }
 
     var isGaming = false;
@@ -744,8 +775,6 @@ $(document).ready(function() {
                 loadImages();
                 $('html, body').animate({'scrollTop': $('.game-header').offset().top});
             } else {
-                $('.game-rounds-ctrl, .game-rounds-images').hide();
-                $('.game-finish').show();
                 var summMinutes = Math.floor(gameTimeTotal / 60);
                 var summSeconds = gameTimeTotal - summMinutes * 60;
                 if (summMinutes < 10) {
@@ -774,8 +803,31 @@ $(document).ready(function() {
                 context2.fillText(newPoints, 311, 370);
                 $('#game-finish-img2').attr('src', canvas2.toDataURL('image/jpeg'));
 
+                var canvas3 = document.getElementById('game-finish-editor3');
+                var context3 = canvas3.getContext('2d');
+                context3.fillStyle = '#ffffff';
+                context3.strokeStyle = '#ffffff';
+                context3.font = 'bold 64px/70px MyriadPro, sans-serif';
+                context3.fillText(gameTimeTotalString, 158, 273);
+                context3.fillText(newPoints, 354, 273);
+                $('#game-finish-img3').attr('src', canvas3.toDataURL('image/jpeg'));
+
                 gameResult["curIMG"] = $('#game-finish-img').attr('src');
                 gameResult["curIMG2"] = $('#game-finish-img2').attr('src');
+                gameResult["curIMG3"] = $('#game-finish-img3').attr('src');
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'files/canvas.json',
+                    dataType: 'json',
+                    data: gameResult,
+                    cache: false
+                }).done(function(data) {
+                    console.log(data.p);
+
+                    $('.game-rounds-ctrl, .game-rounds-images').hide();
+                    $('.game-finish').show();
+                });
             }
         }, 1000);
     }
