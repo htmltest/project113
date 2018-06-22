@@ -65,7 +65,10 @@ $(document).ready(function() {
     var dateFormat = 'dd.mm.yy';
 
     $('.auth-form-input-date input').datepicker({
-        dateFormat: dateFormat
+        dateFormat: dateFormat,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: 'c-100:c'
     });
 
     $('body').on('click', '.reg-form-password-show', function(e) {

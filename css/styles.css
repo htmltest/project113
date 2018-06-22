@@ -93,17 +93,16 @@ nav ul li.active a,
 .welcome-notice {position:relative; font-size:14px; line-height:18px; color:#7a838c; margin:68px 0 0 0; padding:0 0 121px 0}
 .welcome-notice::before {content:"*"; position:absolute; right:100%; top:0; margin-right:4px}
 .welcome-notice a {color:#7a838c}
-.welcome-next {display:block; position:fixed; z-index:99; left:10px; bottom:10px; width:158px; height:158px; text-align:center; color:#fff; background:#00925f; border-radius:50%; line-height:21px; cursor:pointer; transition:all 0.2s}
-.desktop .welcome-next:hover {opacity:0.8}
-.welcome-next-text-1 {font-size:28px; line-height:28px; padding:45px 0 0 0}
-.welcome-next::after {content:""; display:block; width:14px; height:9px; background:url(../images/welcome-next.png); margin:14px auto 0 auto}
+.welcome-next {display:block; position:fixed; z-index:99; left:10px; bottom:10px; width:120px; height:120px; text-align:center; opacity:0.5; color:#fff; background:#00925f; border-radius:50%; font-size:14px; line-height:21px; cursor:pointer; transition:all 0.2s}
+.desktop .welcome-next:hover {opacity:1}
+.welcome-next-text-1 {font-size:20px; line-height:20px; padding:25px 0 0 0}
+.welcome-next::after {content:""; display:block; width:14px; height:9px; background:url(../images/welcome-next.png); margin:4px auto 0 auto}
 
 @media screen and (max-width:1209px) {
-    .welcome {margin:0; background-image:url(../images/welcome-mobile.jpg)}
+    .welcome {margin:0; background:#111112 url(../images/welcome-mobile.jpg) no-repeat center top; background-size:100% auto}
     .welcome-title {font-size:50px; line-height:59px; padding:53px 0 0 0; text-align:center}
     .welcome-text {font-size:26px; line-height:32px; text-align:center; padding:21px 0 0 0}
-    .welcome-hint {text-align:center}
-    .welcome-hint::before {content:""; display:block; width:191px; height:382px; margin:32px auto 48px auto; background:url(../images/welcome-mobile-phone.png)}
+    .welcome-hint {text-align:center; padding:470px 0 0 0}
     .welcome-link {padding:33px 0 0 0}
     .welcome-link a {margin:0 auto}
     .welcome-notice {text-align:center; padding:40px 0 63px 0; margin:0}
@@ -117,10 +116,10 @@ nav ul li.active a,
 .games-item {display:table-cell; vertical-align:top; width:50%; color:#fff; position:relative; padding:0 0 90px 0}
 .games-item:nth-child(1) {background:#123b5f url(../images/games-bg-1.jpg) no-repeat right bottom}
 .games-item:nth-child(1)::before {content:""; display:block; position:absolute; left:-44px; top:45px; width:101px; height:101px; background:url(../images/games-type-1.png); z-index:1}
-.games-item:nth-child(1)::after {content:""; display:block; position:absolute; right:100%; top:0; bottom:0; width:999px; background:#123b5f}
+.games-item:nth-child(1)::after {content:""; display:block; position:absolute; right:100%; top:0; bottom:0; width:9999px; background:#123b5f}
 .games-item:nth-child(2) {background:#224c72; padding:0 0 0 91px}
 .games-item:nth-child(2)::before {content:""; display:block; position:absolute; left:48px; top:45px; width:100px; height:100px; background:url(../images/games-type-2.png); z-index:1}
-.games-item:nth-child(2)::after {content:""; display:block; position:absolute; left:0; top:0; bottom:0; width:999px; background:#2f5b7f url(../images/games-bg-2.jpg) no-repeat left bottom}
+.games-item:nth-child(2)::after {content:""; display:block; position:absolute; left:0; top:0; bottom:0; width:9999px; background:#2f5b7f url(../images/games-bg-2.jpg) no-repeat left bottom}
 .games-item-type {position:relative; padding:82px 0 0 0; z-index:1}
 .games-item-title {position:relative; font-size:33px; line-height:42px; padding:5px 0 0 0; z-index:1}
 .games-item-title::before {content:"« "; margin:0 0 0 -22px}
