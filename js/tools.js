@@ -20,6 +20,11 @@ $(document).ready(function() {
     $('.video-play').click(function(e) {
         $('.video').addClass('play');
         player.playVideo();
+        var iframe = $('#player')[0];
+        var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+        if (requestFullScreen) {
+            requestFullScreen.bind(iframe)();
+        }
         e.preventDefault();
     });
 
@@ -696,7 +701,8 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.game-rounds-image').click(function() {
+    $('.game-rounds-image').on('click dblclick touchend', function(e) {
+        e.preventDefault();
         if (isGaming) {
             var curImg = $(this);
             if (!curImg.hasClass('open')) {
@@ -875,10 +881,34 @@ $(document).ready(function() {
 
                     $('.game-rounds-ctrl, .game-rounds-images').hide();
                     $('.game-finish').show();
+                    $('.game-finish-form').show()
+                    $('.game-finish-share-wrap').hide()
                 });
             }
         }, 1000);
     }
+
+    $('.game-finish-form .auth-form-submit input').click(function(e) {
+        if ($('.game-finish-textarea textarea').val() != '') {
+            $('.game-finish-share-wrap .game-finish-title span').html($('.game-finish-textarea textarea').val());
+            $.ajax({
+                type: 'POST',
+                url: 'files/canvas.json',
+                dataType: 'json',
+                data: {
+                        "text" : $('.game-finish-textarea textarea').val()
+                      },
+                cache: false
+            }).done(function(data) {
+                console.log(data.p);
+                $('.game-finish-form').hide();
+                $('.game-finish-share-wrap').show();
+            });
+        } else {
+            alert('Необходимо придумать кричалку');
+        }
+        e.preventDefault();
+    });
 
     $('.nav-mobile-link').click(function(e) {
         $('html').toggleClass('nav-mobile-open');
